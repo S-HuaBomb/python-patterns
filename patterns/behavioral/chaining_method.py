@@ -1,10 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-from __future__ import print_function
-
-
-class Person(object):
+class Person:
     def __init__(self, name, action):
         self.name = name
         self.action = action
@@ -14,7 +8,7 @@ class Person(object):
         return self.action
 
 
-class Action(object):
+class Action:
     def __init__(self, name):
         self.name = name
 
@@ -27,15 +21,14 @@ class Action(object):
 
 
 def main():
-    move = Action('move')
-    person = Person('Jack', move)
-    person.do_action().amount('5m').stop()
+    """
+    >>> move = Action('move')
+    >>> person = Person('Jack', move)
+    >>> person.do_action().amount('5m').stop()
+    Jack move 5m then stop
+    """
 
 
 if __name__ == '__main__':
-    main()
-
-
-OUTPUT = """
-Jack move 5m then stop
-"""
+    import doctest
+    doctest.testmod()

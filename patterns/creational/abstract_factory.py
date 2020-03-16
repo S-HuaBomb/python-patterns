@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 """
 *What is this pattern about?
 
@@ -29,14 +26,14 @@ based on my own criteria, dogs over cats.
 https://sourcemaking.com/design_patterns/abstract_factory
 http://ginstrom.com/scribbles/2007/10/08/design-patterns-python-style/
 
-*TL;DR80
+*TL;DR
 Provides a way to encapsulate a group of individual factories.
 """
 
 import random
 
 
-class PetShop(object):
+class PetShop:
 
     """A pet shop"""
 
@@ -53,7 +50,7 @@ class PetShop(object):
         print("It says {}".format(pet.speak()))
 
 
-class Dog(object):
+class Dog:
     def speak(self):
         return "woof"
 
@@ -61,7 +58,7 @@ class Dog(object):
         return "Dog"
 
 
-class Cat(object):
+class Cat:
     def speak(self):
         return "meow"
 

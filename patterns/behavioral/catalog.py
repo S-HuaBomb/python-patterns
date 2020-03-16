@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 """
 A class that uses different static function depending of a parameter passed in
 init. Note the use of a single dictionary instead of multiple conditions
@@ -9,7 +6,7 @@ init. Note the use of a single dictionary instead of multiple conditions
 __author__ = "Ibrahim Diop <ibrahim@sikilabs.com>"
 
 
-class Catalog(object):
+class Catalog:
     """catalog of multiple static methods that are executed depending on an init
 
     parameter
@@ -45,7 +42,7 @@ class Catalog(object):
 
 
 # Alternative implementation for different levels of methods
-class CatalogInstance(object):
+class CatalogInstance:
 
     """catalog of multiple methods that are executed depending on an init
 
@@ -77,7 +74,7 @@ class CatalogInstance(object):
         self._instance_method_choices[self.param].__get__(self)()
 
 
-class CatalogClass(object):
+class CatalogClass:
 
     """catalog of multiple class methods that are executed depending on an init
 
@@ -112,7 +109,7 @@ class CatalogClass(object):
         self._class_method_choices[self.param].__get__(None, self.__class__)()
 
 
-class CatalogStatic(object):
+class CatalogStatic:
 
     """catalog of multiple static methods that are executed depending on an init
 
@@ -146,32 +143,24 @@ class CatalogStatic(object):
 
 def main():
     """
-    >>> c = Catalog('param_value_1').main_method()
-    executed method 1!
-    >>> Catalog('param_value_2').main_method()
+    >>> test = Catalog('param_value_2')
+    >>> test.main_method()
     executed method 2!
+
+    >>> test = CatalogInstance('param_value_1')
+    >>> test.main_method()
+    Value x1
+
+    >>> test = CatalogClass('param_value_2')
+    >>> test.main_method()
+    Value x2
+
+    >>> test = CatalogStatic('param_value_1')
+    >>> test.main_method()
+    executed method 1!
     """
-
-    test = Catalog('param_value_2')
-    test.main_method()
-
-    test = CatalogInstance('param_value_1')
-    test.main_method()
-
-    test = CatalogClass('param_value_2')
-    test.main_method()
-
-    test = CatalogStatic('param_value_1')
-    test.main_method()
 
 
 if __name__ == "__main__":
-    main()
-
-
-OUTPUT = """
-executed method 2!
-Value x1
-Value x2
-executed method 1!
-"""
+    import doctest
+    doctest.testmod()

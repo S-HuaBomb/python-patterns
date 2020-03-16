@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 """
 Example from https://en.wikipedia.org/wiki/Facade_pattern#Python
 
@@ -27,15 +24,13 @@ https://sourcemaking.com/design_patterns/facade
 https://fkromer.github.io/python-pattern-references/design/#facade
 http://python-3-patterns-idioms-test.readthedocs.io/en/latest/ChangeInterface.html#facade
 
-*TL;DR80
+*TL;DR
 Provides a simpler unified interface to a complex system.
 """
 
-from __future__ import print_function
-
 
 # Complex computer parts
-class CPU(object):
+class CPU:
     """
     Simple CPU representation.
     """
@@ -49,7 +44,7 @@ class CPU(object):
         print("Executing.")
 
 
-class Memory(object):
+class Memory:
     """
     Simple memory representation.
     """
@@ -57,7 +52,7 @@ class Memory(object):
         print("Loading from {0} data: '{1}'.".format(position, data))
 
 
-class SolidStateDrive(object):
+class SolidStateDrive:
     """
     Simple solid state drive representation.
     """
@@ -65,7 +60,7 @@ class SolidStateDrive(object):
         return "Some data from sector {0} with size {1}".format(lba, size)
 
 
-class ComputerFacade(object):
+class ComputerFacade:
     """
     Represents a facade for various computer parts.
     """

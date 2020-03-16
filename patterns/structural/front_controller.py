@@ -1,25 +1,22 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 """
 @author: Gordeev Andrey <gordeev.and.and@gmail.com>
 
-*TL;DR80
+*TL;DR
 Provides a centralized entry point that controls and manages request handling.
 """
 
 
-class MobileView(object):
+class MobileView:
     def show_index_page(self):
         print('Displaying mobile index page')
 
 
-class TabletView(object):
+class TabletView:
     def show_index_page(self):
         print('Displaying tablet index page')
 
 
-class Dispatcher(object):
+class Dispatcher:
     def __init__(self):
         self.mobile_view = MobileView()
         self.tablet_view = TabletView()
@@ -33,7 +30,7 @@ class Dispatcher(object):
             print('cant dispatch the request')
 
 
-class RequestController(object):
+class RequestController:
     """ front controller """
 
     def __init__(self):
@@ -46,7 +43,7 @@ class RequestController(object):
             print('request must be a Request object')
 
 
-class Request(object):
+class Request:
     """ request """
 
     mobile_type = 'mobile'

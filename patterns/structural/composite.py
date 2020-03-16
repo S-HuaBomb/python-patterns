@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 """
 *What is this pattern about?
 The composite pattern describes a group of objects that is treated the
@@ -25,7 +22,7 @@ program to deal with all shapes uniformly.
 https://en.wikipedia.org/wiki/Composite_pattern
 https://infinitescript.com/2014/10/the-23-gang-of-three-design-patterns/
 
-*TL;DR80
+*TL;DR
 Describes a group of objects that is treated as a single instance.
 """
 
